@@ -1,0 +1,60 @@
+# Privacy Policy for Find My Location
+
+**Last updated:** May 28, 2026  
+**Developer:** PlayMine  
+**Package:** net.playmine.findmylocation
+
+## Overview
+Find My Location ("the App") is a utility that shows your current location, address, and weather. We are committed to protecting your privacy.
+
+## Data Collection
+The App does **NOT** collect, store, or transmit any personal data to our servers. We do not use analytics, tracking, or advertising SDKs that collect personal information.
+
+## Location Data
+- Your location is determined on-device using Google Play Services (GPS/network).
+- Location coordinates are sent to **Nominatim (OpenStreetMap)** solely to convert coordinates into a human-readable address (reverse geocoding).
+- Location coordinates are sent to **OpenWeatherMap** or **Open-Meteo** solely to fetch current weather conditions.
+- **No location history is stored.** Data is held in memory only during active app use and is discarded when the app is closed.
+
+## Third-Party Services
+| Service | Purpose | Data Sent | Privacy Policy |
+|---------|---------|-----------|---------------|
+| Google Play Services | GPS location | None (on-device) | https://policies.google.com/privacy |
+| Nominatim (OpenStreetMap) | Reverse geocoding | Lat/Lon coordinates | https://osmfoundation.org/wiki/Privacy_Policy |
+| OpenWeatherMap | Weather data | Lat/Lon coordinates | https://openweather.co.uk/privacy-policy |
+| Open-Meteo | Weather fallback | Lat/Lon coordinates | https://open-meteo.com/en/terms |
+| Google Play In-App Updates | App updates | None (system-level) | https://policies.google.com/privacy |
+| Google Play In-App Review | User ratings | None (system-level) | https://policies.google.com/privacy |
+
+## Advertising
+The current version of the App does **not** display advertisements. Future versions may include ads served by Google AdMob. If ads are introduced, this privacy policy will be updated accordingly, and AdMob's data practices will apply (https://policies.google.com/technologies/ads).
+
+## Permissions
+| Permission | Purpose |
+|-----------|---------|
+| ACCESS_FINE_LOCATION | Determine precise GPS position |
+| ACCESS_COARSE_LOCATION | Fallback network-based location |
+| INTERNET | Fetch address and weather data |
+
+## Data Storage
+- No data is written to disk or persistent storage (except a simple launch counter for the review prompt).
+- No personal information is stored in SharedPreferences.
+
+## Data Sharing
+We do not sell, trade, or share your data with any third party beyond the services described above.
+
+## Data Security
+All network communications use HTTPS/TLS encryption.
+
+## Children's Privacy
+The App does not knowingly collect data from children under 13. The App does not require account creation or personal information.
+
+## Changes to This Policy
+We may update this privacy policy from time to time. Changes will be reflected in the "Last updated" date above. Continued use of the App constitutes acceptance of the updated policy.
+
+## Contact
+If you have questions about this privacy policy, contact us at:  
+📧 privacy@playmine.net
+
+## Consent
+By using Find My Location, you consent to this privacy policy.
