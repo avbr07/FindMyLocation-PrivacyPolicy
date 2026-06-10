@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** June 8, 2026  
+**Last updated:** June 10, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -12,11 +12,12 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 
 ## Location Data
 - Your location is determined on-device using Google Play Services (GPS/network).
-- Location coordinates are sent to **Nominatim (OpenStreetMap)** solely to convert coordinates into a human-readable address (reverse geocoding).
+- To convert coordinates into a human-readable address (reverse geocoding), the App first uses your device's **built-in geocoder** (provided by Google Play services on most devices); if it cannot resolve a street-level address, coordinates are sent to **Nominatim (OpenStreetMap)** instead. In both cases only the coordinates are shared, solely for this purpose.
 - Location coordinates are sent to **OpenWeatherMap** and/or **Open-Meteo** solely to fetch current weather conditions.
 - Location coordinates are sent to **Open-Meteo** solely to look up terrain ground elevation, used to calculate height above ground ("flight height").
 - When you view the map, your approximate location (as map-tile coordinates) is sent to the **OpenStreetMap tile servers** to display map imagery.
-- Speed and altitude are derived on-device from the GPS signal and are not transmitted anywhere.
+- Speed, trip distance, and altitude are derived on-device from the GPS signal and are not transmitted anywhere.
+- The compass heading is derived on-device from the phone's motion sensors and, while you are moving, the GPS direction of travel. It is never transmitted.
 - **No location history is stored.** Location data is held in memory only during active use and is discarded when tracking stops or the app is closed.
 
 ## Background Location
@@ -33,7 +34,8 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 | Service | Purpose | Data Sent | Privacy Policy |
 |---------|---------|-----------|---------------|
 | Google Play Services | GPS / network location | None (on-device) | https://policies.google.com/privacy |
-| Nominatim (OpenStreetMap) | Reverse geocoding (address) | Lat/Lon coordinates, IP | https://osmfoundation.org/wiki/Privacy_Policy |
+| Device geocoder (Google Play services) | Reverse geocoding (address) — primary | Lat/Lon coordinates | https://policies.google.com/privacy |
+| Nominatim (OpenStreetMap) | Reverse geocoding (address) — fallback | Lat/Lon coordinates, IP | https://osmfoundation.org/wiki/Privacy_Policy |
 | OpenStreetMap tile servers | Map display | Approximate location (tile coords), IP | https://osmfoundation.org/wiki/Privacy_Policy |
 | OpenWeatherMap | Weather data | Lat/Lon coordinates, IP | https://openweather.co.uk/privacy-policy |
 | Open-Meteo | Weather and ground-elevation data | Lat/Lon coordinates, IP | https://open-meteo.com/en/terms |
@@ -57,7 +59,7 @@ The current version of the App does **not** display advertisements. Future versi
 
 ## Data Storage
 - No location data is written to disk or persistent storage.
-- The App stores only non-personal app preferences on-device in SharedPreferences: a launch counter (for the review prompt), the voice-announcement on/off setting, and the preferred speed unit (mph/km/h).
+- The App stores only non-personal app preferences on-device in SharedPreferences: a launch counter (for the review prompt), the voice-announcement on/off setting, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), and a counter of postponed app-update reminders.
 - No personal information is stored.
 
 ## Data Sharing
