@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** June 10, 2026  
+**Last updated:** June 11, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -23,7 +23,7 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 ## Background Location
 - The App offers an **optional** continuous tracking mode that keeps updating and announcing your location while the screen is locked or the app is in the background.
 - When active, this runs as an Android **foreground service** with an **ongoing, visible notification**, so you always know tracking is on. You can stop it at any time.
-- Background location is used **only** to provide the App's core feature you enabled — live location, address, and voice announcements. It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates.
+- Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates.
 - Background location updates occur only while you have this mode enabled, and stop when you stop the service.
 
 ## Voice Announcements
