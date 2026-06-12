@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** June 11, 2026  
+**Last updated:** June 12, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -59,7 +59,7 @@ The current version of the App does **not** display advertisements. Future versi
 
 ## Data Storage
 - No location data is written to disk or persistent storage.
-- The App stores only non-personal app preferences on-device in SharedPreferences: a launch counter (for the review prompt), the voice-announcement on/off setting, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), and a counter of postponed app-update reminders.
+- The App stores only non-personal app preferences on-device in SharedPreferences: a launch counter (for the review prompt), the voice-announcement on/off setting, the in-app voice volume level, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), and a counter of postponed app-update reminders.
 - No personal information is stored.
 
 ## Data Sharing
