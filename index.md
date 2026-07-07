@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** July 7, 2026  
+**Last updated:** July 8, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -22,10 +22,11 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 - **Trip history stays on your device.** To power the Trips tab, the App keeps a log of your recent journeys (coordinates, place names, and times) **in the App's private storage on your device only**, for up to **7 days**, after which it is deleted automatically. This history is **never transmitted** to us or to any third party (viewing a route on the map only fetches map imagery, as above), and it is removed entirely if you uninstall the App. All other location data is held in memory only during active use and is discarded when tracking stops or the app is closed.
 
 ## Background Location
-- The App offers an **optional** continuous tracking mode that keeps updating and announcing your location while the screen is locked or the app is in the background.
-- When active, this runs as an Android **foreground service** with an **ongoing, visible notification**, so you always know tracking is on. You can stop it at any time.
-- Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates.
-- Background location updates occur only while you have this mode enabled, and stop when you stop the service.
+- The App offers two **optional**, separately controlled features that use location while the screen is locked or the app is in the background. Both are off until you turn them on, both run as an Android **foreground service** with an **ongoing, visible notification** so you always know when they are active, and both can be stopped at any time:
+  - **Keep running in background** — keeps updating and announcing your location continuously until you switch it off.
+  - **Record trips with screen off** — when a journey (walk or drive) is underway, keeps tracing its route so the trip appears complete in the Trips tab even if the phone is locked or in your pocket. It runs **only while a trip is being recorded**, stops itself when the journey ends, and does not announce or geocode anything. You are asked before this is ever enabled, and can change it in Settings at any time.
+- Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (routes, speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates. Trip routes recorded in the background stay in the same on-device, 7-day trip history described above and are never transmitted.
+- Background location updates occur only while one of these features is enabled, and stop when it stops.
 
 ## Voice Announcements
 - The App can read your current place name aloud using your device's built-in **on-device text-to-speech** engine.
