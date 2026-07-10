@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** July 8, 2026  
+**Last updated:** July 9, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -8,7 +8,7 @@
 Find My Location ("the App") is a utility that shows your current location, address, weather, travel speed, altitude/flight height, and steps — and keeps a short, on-device-only log of your recent trips so you can view your travelled routes. We are committed to protecting your privacy.
 
 ## Data Collection
-The App does **NOT** collect, store, or transmit any personal data to servers operated by us. We do not use analytics, tracking, or advertising SDKs that collect personal information. We do not require an account, sign-in, or any personal details.
+The App does **NOT** collect, store, or transmit any personal data to servers operated by us. We do not use analytics, tracking, or advertising SDKs that collect personal information. We do not require an account, sign-in, or any personal details. The App counts fully **anonymous usage statistics** (only how many times the app is opened — never your location, routes, or anything that could identify you or your device); see the "Anonymous Usage Statistics" section below, including how to turn this off.
 
 ## Location Data
 - Your location is determined on-device using Google Play Services (GPS/network).
@@ -32,6 +32,15 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 - The App can read your current place name aloud using your device's built-in **on-device text-to-speech** engine.
 - No audio, and no location text, is sent off the device for this feature.
 
+## Anonymous Usage Statistics
+To understand how many people use the App, the App counts exactly two usage events using **Aptabase**, a privacy-first analytics service, hosted in the **European Union (Germany)**:
+
+- **What is counted:** the app's very first launch after being installed, and the app being opened. Nothing else — no tabs, no trips, no settings, and **never the routes, places, or any coordinates**. Each event carries only basic app/device context: app version, Android version, device model, and the country/locale reported by the system.
+- **What is never sent:** no device ID, advertising ID, hardware identifier, account identifier, name, email, precise location, addresses, place names, or trip routes. There is nothing in the data that can identify you or your device.
+- **How anonymity works:** Aptabase does not use identifiers. Sessions are grouped using a hash of the network address and user agent combined with a **salt that rotates every day**, so activity cannot be linked to any individual and cannot be correlated across days. Raw IP addresses are not stored.
+- **Your control:** you can turn this off at any time in **Settings → Privacy → Share anonymous usage statistics**. When off, nothing is sent.
+- **Retention:** the anonymous, aggregate event counts are retained by Aptabase for up to 5 years (see https://aptabase.com/legal/privacy). Because the data is anonymous by design, it cannot be traced back to you, and there is nothing personal in it to delete.
+
 ## Third-Party Services
 | Service | Purpose | Data Sent | Privacy Policy |
 |---------|---------|-----------|---------------|
@@ -43,6 +52,7 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 | Open-Meteo | Weather and ground-elevation data | Lat/Lon coordinates, IP | https://open-meteo.com/en/terms |
 | Google Play In-App Updates | App updates | None (system-level) | https://policies.google.com/privacy |
 | Google Play In-App Review | User ratings | None (system-level) | https://policies.google.com/privacy |
+| Aptabase (EU-hosted) | Anonymous usage statistics | Anonymous event counts + app version, Android version, device model, country/locale — **no identifiers, no location** | https://aptabase.com/legal/privacy |
 
 When you tap **Share**, the App builds a Google Maps link with your coordinates and hands it to whichever app you choose to share with. Nothing is shared until you select a destination.
 
@@ -63,7 +73,7 @@ The current version of the App does **not** display advertisements. Future versi
 
 ## Data Storage
 - The only location data written to storage is the **on-device trip history** described above: kept in the App's private storage, auto-deleted after 7 days, never transmitted, and removed on uninstall.
-- The App also stores non-personal app preferences on-device: a days-of-use counter (for the review prompt), the voice-announcement on/off setting, the in-app voice volume level, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), your daily step count, and a counter of postponed app-update reminders.
+- The App also stores non-personal app preferences on-device: a days-of-use counter (for the review prompt), the voice-announcement on/off setting, the in-app voice volume level, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), your daily step count, the anonymous-usage-statistics on/off setting, and a counter of postponed app-update reminders.
 - If you choose to enter your body weight (used only to estimate calories from your steps), it is stored on-device only and never leaves your phone.
 - No personal information is collected by us.
 
@@ -75,6 +85,7 @@ We operate no servers and retain **no user data of any kind** on our side. All d
 | Trip history (routes, place names, times) | App's private on-device storage | **7 days**, then deleted automatically |
 | Current location, address, weather, speed, altitude, compass | Device memory only | Discarded when tracking stops or the App closes |
 | App preferences (units, voice settings, optional body weight, step count, usage counters) | App's private on-device storage | Until you delete them or uninstall the App |
+| Anonymous usage statistics (event counts — no identifiers, no location) | Aptabase (EU) | Up to 5 years, in anonymous aggregate form only |
 
 The third-party services listed above (geocoding, weather, elevation, map tiles) receive coordinates transiently to answer each request; we do not control their retention, which is governed by their own privacy policies linked in the table above.
 
@@ -83,6 +94,7 @@ Because we never collect or store your data on any server, **there is no data fo
 
 - **Delete everything instantly:** uninstall the App, or go to **Android Settings → Apps → Find My Location → Storage → Clear data**. This permanently removes the trip history, all preferences, and any stored weight — nothing survives anywhere else.
 - **Trip history** also deletes itself automatically after 7 days.
+- **Anonymous usage statistics** contain no identifiers by design, so they cannot be traced back to you or your device — there is nothing personal in them to delete. You can stop them being counted at any time in **Settings → Privacy**.
 
 If you have any questions or requests regarding your data, contact us at **playmine.support@gmail.com** and we will respond promptly.
 
