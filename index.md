@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** July 9, 2026  
+**Last updated:** July 10, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -16,6 +16,7 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 - Location coordinates are sent to **OpenWeatherMap** and/or **Open-Meteo** solely to fetch current weather conditions.
 - Location coordinates are sent to **Open-Meteo** solely to look up terrain ground elevation, used to calculate height above ground ("flight height").
 - When you view the map, your approximate location (as map-tile coordinates) is sent to the **OpenStreetMap tile servers** to display map imagery.
+- If you tap the Map tab's **fuel (Petrol/Gas)** or **Food** buttons, your coordinates and chosen search radius are sent to the **Overpass API** (an OpenStreetMap community service) solely to find nearby fuel stations and restaurants. This happens only when you use those buttons.
 - Speed, trip distance, and altitude are derived on-device from the GPS signal and are not transmitted anywhere.
 - The compass heading is derived on-device from the phone's motion sensors and, while you are moving, the GPS direction of travel. It is never transmitted.
 - Step counts (and the calorie/distance estimates derived from them) come from your phone's step sensor and accelerometer, are computed on-device, and are never transmitted.
@@ -24,7 +25,7 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 ## Background Location
 - The App offers two **optional**, separately controlled features that use location while the screen is locked or the app is in the background. Both are off until you turn them on, both run as an Android **foreground service** with an **ongoing, visible notification** so you always know when they are active, and both can be stopped at any time:
   - **Keep running in background** — keeps updating and announcing your location continuously until you switch it off.
-  - **Record trips with screen off** — when a journey (walk or drive) is underway, keeps tracing its route so the trip appears complete in the Trips tab even if the phone is locked or in your pocket. It runs **only while a trip is being recorded**, stops itself when the journey ends, and does not announce or geocode anything. You are asked before this is ever enabled, and can change it in Settings at any time.
+  - **Trip recording** — saves your walks and drives to the on-device Trips tab, tracing each journey's route even while the phone is locked or in your pocket. The screen-locked part runs **only while a trip is being recorded** and only after you have confirmed it (a one-time prompt on your first trip, or by turning the Trip recording switch on yourself); it stops itself when the journey ends and does not announce or geocode anything. One switch controls all trip recording — in Settings, at the top of the Trips tab, or by long-pressing the Trips tab — and switching it off stops all trip recording and its GPS use entirely.
 - Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (routes, speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates. Trip routes recorded in the background stay in the same on-device, 7-day trip history described above and are never transmitted.
 - Background location updates occur only while one of these features is enabled, and stop when it stops.
 
@@ -48,6 +49,7 @@ To understand how many people use the App, the App counts exactly two usage even
 | Device geocoder (Google Play services) | Reverse geocoding (address) — primary | Lat/Lon coordinates | https://policies.google.com/privacy |
 | Nominatim (OpenStreetMap) | Reverse geocoding (address) — fallback | Lat/Lon coordinates, IP | https://osmfoundation.org/wiki/Privacy_Policy |
 | OpenStreetMap tile servers | Map display | Approximate location (tile coords), IP | https://osmfoundation.org/wiki/Privacy_Policy |
+| Overpass API (OpenStreetMap community) | Nearby fuel stations & restaurants (only when you tap Petrol/Gas or Food) | Lat/Lon coordinates + search radius, IP | https://osmfoundation.org/wiki/Privacy_Policy |
 | OpenWeatherMap | Weather data | Lat/Lon coordinates, IP | https://openweather.co.uk/privacy-policy |
 | Open-Meteo | Weather and ground-elevation data | Lat/Lon coordinates, IP | https://open-meteo.com/en/terms |
 | Google Play In-App Updates | App updates | None (system-level) | https://policies.google.com/privacy |
