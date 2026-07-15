@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** July 10, 2026  
+**Last updated:** July 15, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -20,13 +20,13 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 - Speed, trip distance, and altitude are derived on-device from the GPS signal and are not transmitted anywhere.
 - The compass heading is derived on-device from the phone's motion sensors and, while you are moving, the GPS direction of travel. It is never transmitted.
 - Step counts (and the calorie/distance estimates derived from them) come from your phone's step sensor and accelerometer, are computed on-device, and are never transmitted.
-- **Trip history stays on your device.** To power the Trips tab, the App keeps a log of your recent journeys (coordinates, place names, and times) **in the App's private storage on your device only**, for up to **7 days**, after which it is deleted automatically. This history is **never transmitted** to us or to any third party (viewing a route on the map only fetches map imagery, as above), and it is removed entirely if you uninstall the App. All other location data is held in memory only during active use and is discarded when tracking stops or the app is closed.
+- **Trip history stays on your device.** To power the Trips tab, the App keeps a log of your recent journeys (coordinates, place names, and times) **in the App's private storage on your device only**, for your **7 most recent travel days, and never longer than 30 days**: a day's trips are deleted automatically once 7 newer days with travel have been recorded (days you don't travel don't shorten this), and any trip **older than 30 days is deleted regardless**. This history is **never transmitted** to us or to any third party (viewing a route on the map only fetches map imagery, as above), and it is removed entirely if you uninstall the App. All other location data is held in memory only during active use and is discarded when tracking stops or the app is closed.
 
 ## Background Location
 - The App offers two **optional**, separately controlled features that use location while the screen is locked or the app is in the background. Both are off until you turn them on, both run as an Android **foreground service** with an **ongoing, visible notification** so you always know when they are active, and both can be stopped at any time:
   - **Keep running in background** — keeps updating and announcing your location continuously until you switch it off.
   - **Trip recording** — saves your walks and drives to the on-device Trips tab, tracing each journey's route even while the phone is locked or in your pocket. The screen-locked part runs **only while a trip is being recorded** and only after you have confirmed it (a one-time prompt on your first trip, or by turning the Trip recording switch on yourself); it stops itself when the journey ends and does not announce or geocode anything. One switch controls all trip recording — in Settings, at the top of the Trips tab, or by long-pressing the Trips tab — and switching it off stops all trip recording and its GPS use entirely.
-- Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (routes, speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates. Trip routes recorded in the background stay in the same on-device, 7-day trip history described above and are never transmitted.
+- Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (routes, speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates. Trip routes recorded in the background stay in the same on-device trip history described above (your 7 most recent travel days, nothing older than 30 days) and are never transmitted.
 - Background location updates occur only while one of these features is enabled, and stop when it stops.
 
 ## Voice Announcements
@@ -74,7 +74,7 @@ The current version of the App does **not** display advertisements. Future versi
 | ACCESS_NETWORK_STATE | Let the map check for connectivity before fetching tiles |
 
 ## Data Storage
-- The only location data written to storage is the **on-device trip history** described above: kept in the App's private storage, auto-deleted after 7 days, never transmitted, and removed on uninstall.
+- The only location data written to storage is the **on-device trip history** described above: kept in the App's private storage, auto-deleted past your 7 most recent travel days (and always past 30 days of age), never transmitted, and removed on uninstall.
 - The App also stores non-personal app preferences on-device: a days-of-use counter (for the review prompt), the voice-announcement on/off setting, the in-app voice volume level, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), your daily step count, the anonymous-usage-statistics on/off setting, and a counter of postponed app-update reminders.
 - If you choose to enter your body weight (used only to estimate calories from your steps), it is stored on-device only and never leaves your phone.
 - No personal information is collected by us.
@@ -84,7 +84,7 @@ We operate no servers and retain **no user data of any kind** on our side. All d
 
 | Data | Where it is kept | How long |
 |------|------------------|----------|
-| Trip history (routes, place names, times) | App's private on-device storage | **7 days**, then deleted automatically |
+| Trip history (routes, place names, times) | App's private on-device storage | Your **7 most recent travel days, at most 30 days old** — a day's trips are deleted once 7 newer travel days exist, and anything older than 30 days is deleted regardless |
 | Current location, address, weather, speed, altitude, compass | Device memory only | Discarded when tracking stops or the App closes |
 | App preferences (units, voice settings, optional body weight, step count, usage counters) | App's private on-device storage | Until you delete them or uninstall the App |
 | Anonymous usage statistics (event counts — no identifiers, no location) | Aptabase (EU) | Up to 5 years, in anonymous aggregate form only |
@@ -95,7 +95,7 @@ The third-party services listed above (geocoding, weather, elevation, map tiles)
 Because we never collect or store your data on any server, **there is no data for us to delete** — everything is on your device and under your control. You can delete it at any time:
 
 - **Delete everything instantly:** uninstall the App, or go to **Android Settings → Apps → Find My Location → Storage → Clear data**. This permanently removes the trip history, all preferences, and any stored weight — nothing survives anywhere else.
-- **Trip history** also deletes itself automatically after 7 days.
+- **Trip history** also prunes itself automatically: only your 7 most recent travel days are kept, and nothing older than 30 days.
 - **Anonymous usage statistics** contain no identifiers by design, so they cannot be traced back to you or your device — there is nothing personal in them to delete. You can stop them being counted at any time in **Settings → Privacy**.
 
 If you have any questions or requests regarding your data, contact us at **playmine.support@gmail.com** and we will respond promptly.
@@ -106,7 +106,7 @@ We do not sell, trade, or share your data with any third party beyond the servic
 ## Data Security & Handling
 We handle the personal and sensitive data the App works with (your location) as follows:
 
-- Location is processed **on your device**. The only data written to disk — the 7-day trip history and your preferences — is stored in the App's **private, sandboxed storage**, which Android prevents other apps from reading.
+- Location is processed **on your device**. The only data written to disk — the trip history (your 7 most recent travel days, nothing older than 30 days) and your preferences — is stored in the App's **private, sandboxed storage**, which Android prevents other apps from reading.
 - All network communications (geocoding, weather, elevation, map tiles) use **HTTPS/TLS encryption** and carry only coordinates — never your name, contacts, identifiers, or anything else, because the App never has such information.
 - No personal data is ever transmitted to servers operated by us; we have no servers and no user database.
 
