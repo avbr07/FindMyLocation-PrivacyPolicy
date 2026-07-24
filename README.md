@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** July 15, 2026  
+**Last updated:** July 24, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -16,9 +16,11 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 - Location coordinates are sent to **OpenWeatherMap** and/or **Open-Meteo** solely to fetch current weather conditions.
 - Location coordinates are sent to **Open-Meteo** solely to look up terrain ground elevation, used to calculate height above ground ("flight height").
 - When you view the map, your approximate location (as map-tile coordinates) is sent to the **OpenStreetMap tile servers** to display map imagery.
-- If you tap the Map tab's **fuel (Petrol/Gas)** or **Food** buttons, your coordinates and chosen search radius are sent to the **Overpass API** (an OpenStreetMap community service) solely to find nearby fuel stations and restaurants. This happens only when you use those buttons.
+- If you tap the Map tab's **fuel (Petrol/Gas)**, **Food** or **Attractions** buttons, your coordinates and chosen search radius are sent to the **Overpass API** (an OpenStreetMap community service) to find nearby fuel stations, restaurants and attractions. For **Attractions**, your coordinates are **also** sent to the **Wikidata Query Service (Wikimedia)** to find famous/notable places nearby (temples, monuments, museums and the like). This happens only when you use those buttons.
+- If you **tap a place on the map**, the App reverse-geocodes that point (built-in geocoder first, then Nominatim if needed — as above) to show its address; only the tapped coordinates are shared, solely for this purpose.
+- If you type a place into the Map tab's **search box** (a ZIP code, city and state, landmark or address), that text is sent to your device's **built-in geocoder** and, if it finds nothing, to **Nominatim (OpenStreetMap)**, solely to turn it into a point on the map. Your approximate location is sent with it only so that nearby matches are ranked first. This happens only when you run a search; the text you type is not stored by the App or sent anywhere else.
 - Speed, trip distance, and altitude are derived on-device from the GPS signal and are not transmitted anywhere.
-- The compass heading is derived on-device from the phone's motion sensors and, while you are moving, the GPS direction of travel. It is never transmitted.
+- The compass heading is derived on-device from the phone's motion (magnetometer) sensors. It is never transmitted.
 - Step counts (and the calorie/distance estimates derived from them) come from your phone's step sensor and accelerometer, are computed on-device, and are never transmitted.
 - **Trip history stays on your device.** To power the Trips tab, the App keeps a log of your recent journeys (coordinates, place names, and times) **in the App's private storage on your device only**, for your **7 most recent travel days, and never longer than 30 days**: a day's trips are deleted automatically once 7 newer days with travel have been recorded (days you don't travel don't shorten this), and any trip **older than 30 days is deleted regardless**. This history is **never transmitted** to us or to any third party (viewing a route on the map only fetches map imagery, as above), and it is removed entirely if you uninstall the App. All other location data is held in memory only during active use and is discarded when tracking stops or the app is closed.
 
@@ -46,10 +48,11 @@ To understand how many people use the App, the App counts exactly two usage even
 | Service | Purpose | Data Sent | Privacy Policy |
 |---------|---------|-----------|---------------|
 | Google Play Services | GPS / network location | None (on-device) | https://policies.google.com/privacy |
-| Device geocoder (Google Play services) | Reverse geocoding (address) — primary | Lat/Lon coordinates | https://policies.google.com/privacy |
-| Nominatim (OpenStreetMap) | Reverse geocoding (address) — fallback | Lat/Lon coordinates, IP | https://osmfoundation.org/wiki/Privacy_Policy |
+| Device geocoder (Google Play services) | Reverse geocoding (address) — primary; place search — primary (only when you use the Map search box) | Lat/Lon coordinates; the place text you type | https://policies.google.com/privacy |
+| Nominatim (OpenStreetMap) | Reverse geocoding (address) — fallback; place search — fallback (only when you use the Map search box) | Lat/Lon coordinates, IP; the place text you type | https://osmfoundation.org/wiki/Privacy_Policy |
 | OpenStreetMap tile servers | Map display | Approximate location (tile coords), IP | https://osmfoundation.org/wiki/Privacy_Policy |
-| Overpass API (OpenStreetMap community) | Nearby fuel stations & restaurants (only when you tap Petrol/Gas or Food) | Lat/Lon coordinates + search radius, IP | https://osmfoundation.org/wiki/Privacy_Policy |
+| Overpass API (OpenStreetMap community) | Nearby fuel stations, restaurants & attractions (only when you tap Petrol/Gas, Food or Attractions) | Lat/Lon coordinates + search radius, IP | https://osmfoundation.org/wiki/Privacy_Policy |
+| Wikidata Query Service (Wikimedia) | Famous/notable attractions near a point (only when you use the Attractions button) | Lat/Lon coordinates, IP | https://foundation.wikimedia.org/wiki/Policy:Privacy_policy |
 | OpenWeatherMap | Weather data | Lat/Lon coordinates, IP | https://openweather.co.uk/privacy-policy |
 | Open-Meteo | Weather and ground-elevation data | Lat/Lon coordinates, IP | https://open-meteo.com/en/terms |
 | Google Play In-App Updates | App updates | None (system-level) | https://policies.google.com/privacy |
@@ -70,8 +73,9 @@ The current version of the App does **not** display advertisements. Future versi
 | FOREGROUND_SERVICE | Run optional background location tracking |
 | FOREGROUND_SERVICE_LOCATION | Declare the background service as a location service (Android 14+) |
 | POST_NOTIFICATIONS | Show the ongoing tracking notification (Android 13+) |
-| ACTIVITY_RECOGNITION | Count steps for the Speed tab's step counter (optional — Android 10+; denying it only disables step counting) |
+| ACTIVITY_RECOGNITION | Count steps for the Speed tab's step counter, and — while trip recording is on — notice when you start moving so a trip can begin even if the phone was locked before you left (optional — Android 10+; denying it only disables step counting and this automatic start) |
 | ACCESS_NETWORK_STATE | Let the map check for connectivity before fetching tiles |
+| RECEIVE_BOOT_COMPLETED | Re-enable that automatic trip start after the phone restarts, if trip recording is on |
 
 ## Data Storage
 - The only location data written to storage is the **on-device trip history** described above: kept in the App's private storage, auto-deleted past your 7 most recent travel days (and always past 30 days of age), never transmitted, and removed on uninstall.
