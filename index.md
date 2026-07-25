@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** July 24, 2026  
+**Last updated:** July 25, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -16,7 +16,8 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 - Location coordinates are sent to **OpenWeatherMap** and/or **Open-Meteo** solely to fetch current weather conditions.
 - Location coordinates are sent to **Open-Meteo** solely to look up terrain ground elevation, used to calculate height above ground ("flight height").
 - When you view the map, your approximate location (as map-tile coordinates) is sent to the **OpenStreetMap tile servers** to display map imagery.
-- If you tap the Map tab's **fuel (Petrol/Gas)**, **Food** or **Attractions** buttons, your coordinates and chosen search radius are sent to the **Overpass API** (an OpenStreetMap community service) to find nearby fuel stations, restaurants and attractions. For **Attractions**, your coordinates are **also** sent to the **Wikidata Query Service (Wikimedia)** to find famous/notable places nearby (temples, monuments, museums and the like). This happens only when you use those buttons.
+- If you tap the Map tab's **fuel (Petrol/Gas)**, **Food** or **Attractions** buttons, your coordinates and chosen search radius are sent to the **Overpass API** (an OpenStreetMap community service) to find nearby fuel stations, restaurants and attractions. For **Attractions**, your coordinates are **also** sent to the **Wikidata Query Service (Wikimedia)** to find famous/notable places nearby (temples, monuments, museums and the like).
+- **Attractions are looked up in advance, before you ask for them.** Because these searches are slow, the App starts looking for nearby attractions automatically — when you open the Map tab, when you move the map to a new place (by typing in the search box or by long-pressing a point), when you change the search distance, and again if you travel far enough that the previous results no longer describe where you are. This sends exactly the same thing to the same two services as tapping **Attractions** would: your coordinates and the selected search radius to the **Overpass API** and the **Wikidata Query Service**, and nothing else. **Fuel and Food are not searched in advance** — those run only when you tap them. If you would rather nothing was sent, leave the Map tab; these lookups happen only while you are on it.
 - If you **tap a place on the map**, the App reverse-geocodes that point (built-in geocoder first, then Nominatim if needed — as above) to show its address; only the tapped coordinates are shared, solely for this purpose.
 - If you type a place into the Map tab's **search box** (a ZIP code, city and state, landmark or address), that text is sent to your device's **built-in geocoder** and, if it finds nothing, to **Nominatim (OpenStreetMap)**, solely to turn it into a point on the map. Your approximate location is sent with it only so that nearby matches are ranked first. This happens only when you run a search; the text you type is not stored by the App or sent anywhere else.
 - Speed, trip distance, and altitude are derived on-device from the GPS signal and are not transmitted anywhere.
@@ -51,8 +52,8 @@ To understand how many people use the App, the App counts exactly two usage even
 | Device geocoder (Google Play services) | Reverse geocoding (address) — primary; place search — primary (only when you use the Map search box) | Lat/Lon coordinates; the place text you type | https://policies.google.com/privacy |
 | Nominatim (OpenStreetMap) | Reverse geocoding (address) — fallback; place search — fallback (only when you use the Map search box) | Lat/Lon coordinates, IP; the place text you type | https://osmfoundation.org/wiki/Privacy_Policy |
 | OpenStreetMap tile servers | Map display | Approximate location (tile coords), IP | https://osmfoundation.org/wiki/Privacy_Policy |
-| Overpass API (OpenStreetMap community) | Nearby fuel stations, restaurants & attractions (only when you tap Petrol/Gas, Food or Attractions) | Lat/Lon coordinates + search radius, IP | https://osmfoundation.org/wiki/Privacy_Policy |
-| Wikidata Query Service (Wikimedia) | Famous/notable attractions near a point (only when you use the Attractions button) | Lat/Lon coordinates, IP | https://foundation.wikimedia.org/wiki/Policy:Privacy_policy |
+| Overpass API (OpenStreetMap community) | Nearby fuel stations, restaurants & attractions. Fuel and Food only when you tap them; attractions also searched automatically in advance while you are on the Map tab (see "Location Data") | Lat/Lon coordinates + search radius, IP | https://osmfoundation.org/wiki/Privacy_Policy |
+| Wikidata Query Service (Wikimedia) | Famous/notable attractions near a point — when you tap Attractions, and automatically in advance while you are on the Map tab (see "Location Data") | Lat/Lon coordinates, IP | https://foundation.wikimedia.org/wiki/Policy:Privacy_policy |
 | OpenWeatherMap | Weather data | Lat/Lon coordinates, IP | https://openweather.co.uk/privacy-policy |
 | Open-Meteo | Weather and ground-elevation data | Lat/Lon coordinates, IP | https://open-meteo.com/en/terms |
 | Google Play In-App Updates | App updates | None (system-level) | https://policies.google.com/privacy |
