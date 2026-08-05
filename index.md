@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** August 2, 2026  
+**Last updated:** August 4, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -33,7 +33,10 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 ## Background Location
 - The App offers two **optional**, separately controlled features that use location while the screen is locked or the app is in the background. Both are off until you turn them on, both run as an Android **foreground service** with an **ongoing, visible notification** so you always know when they are active, and both can be stopped at any time:
   - **Keep running in background** — keeps updating and announcing your location continuously until you switch it off.
-  - **Trip recording** — saves your walks and drives to the on-device Trips tab, tracing each journey's route even while the phone is locked or in your pocket. The screen-locked part runs **only while a trip is being recorded** and only after you have confirmed it (a one-time prompt on your first trip, or by turning the Trip recording switch on yourself); it stops itself when the journey ends and does not announce or geocode anything. One switch controls all trip recording — in Settings, at the top of the Trips tab, or by long-pressing the Trips tab — and switching it off stops all trip recording and its GPS use entirely.
+  - **Trip recording** — saves your walks and drives to the on-device Trips tab, tracing each journey's route even while the phone is locked or in your pocket. It runs only after you have confirmed it (a one-time prompt on your first trip, or by turning the Trip recording switch on yourself), and it never announces or geocodes anything.
+    - **Changed in version 1.14.0 — please read.** The screen-locked part used to start and stop with each journey. It now stays running for as long as the Trip recording switch is **on**, with its ongoing notification visible the whole time. Between journeys it checks your position at low accuracy about **once a minute**, purely to notice when a journey has begun; **full-accuracy GPS runs only while you are actually travelling**. This was necessary because Android does not allow an app like this one to *start* location tracking from the background — so an app that stopped between trips could not restart itself when you drove off, and journeys were being missed or recorded as a straight line between two points. The notification tells you which state it is in: *"Watching for your next trip"* or *"Recording your trip"*.
+    - What has **not** changed: the positions collected between journeys are used only to decide whether a trip has started, they are held in memory and discarded, they are never written to your trip history unless a journey is actually recorded, and nothing is transmitted anywhere.
+    - One switch controls all trip recording — in Settings, at the top of the Trips tab, or by long-pressing the Trips tab — and switching it off stops the service, the notification and all of its GPS use entirely.
 - Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (routes, speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates. Trip routes recorded in the background stay in the same on-device trip history described above (your 7 most recent travel days, plus any trips you have chosen to keep) and are never transmitted.
 - Background location updates occur only while one of these features is enabled, and stop when it stops.
 
