@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** August 6, 2026  
+**Last updated:** August 9, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -19,6 +19,7 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
 - **Ground elevation is no longer looked up over the internet.** The terrain height used to calculate height above ground ("flight height") now comes from an elevation grid shipped inside the App (**ETOPO 2022**, NOAA NCEI, public domain). Your coordinates are **not** sent to any service for this, and the previous **Open-Meteo** elevation request has been removed.
 - When you view the map, your approximate location (as map-tile coordinates) is sent to the **OpenStreetMap tile servers** to display map imagery.
 - If you tap the Map tab's **fuel (Petrol/Gas)**, **Food**, **Hospital** or **Attractions** buttons, your coordinates and chosen search radius are sent to the **Overpass API** (an OpenStreetMap community service) to find nearby fuel stations, restaurants, medical services and attractions. For **Attractions**, your coordinates are **also** sent to the **Wikidata Query Service (Wikimedia)** to find famous/notable places nearby (temples, monuments, museums and the like).
+    - **Changed in version 1.17.0 — this now sends less.** Results of a search are remembered on your device, so looking again at somewhere you have already searched sends **nothing at all**: no coordinates, no request, and it works with no connection. See "nearby-places cache" under Data Storage for how long that lasts. Separately, the app now contacts **one** of these shared servers at a time rather than racing several, so a single search costs the services that donate them far less than it used to.
     - **Changed in version 1.15.0.** When those shared servers are overloaded, the App now tells you so after about 45 seconds instead of leaving you watching a spinner — but **the request itself stays open in the background for up to about 75 seconds**, in case a slow server still answers. If it does, the results simply appear. Nothing additional is sent, and no new request is made: it is the same single request, allowed to finish. Leaving the Map tab or starting another search ends it.
 - **Attractions are looked up in advance, before you ask for them.** Because these searches are slow, the App starts looking for nearby attractions automatically — when you open the Map tab, when you move the map to a new place (by typing in the search box or by long-pressing a point), when you change the search distance, and again if you travel far enough that the previous results no longer describe where you are. This sends exactly the same thing to the same two services as tapping **Attractions** would: your coordinates and the selected search radius to the **Overpass API** and the **Wikidata Query Service**, and nothing else. **Fuel and Food are not searched in advance** — those run only when you tap them. If you would rather nothing was sent, leave the Map tab; these lookups happen only while you are on it.
 - If you **tap a place on the map**, the App works out its address using your device's **built-in geocoder** only, falling back to the on-device list of places when that has nothing. Only the tapped coordinates are shared with the device geocoder, solely for this purpose. Nothing is sent to Nominatim.
@@ -40,6 +41,18 @@ The App does **NOT** collect, store, or transmit any personal data to servers op
     - One switch controls all trip recording — in Settings, at the top of the Trips tab, or by long-pressing the Trips tab — and switching it off stops the service, the notification and all of its GPS use entirely.
 - Background location is used **only** to provide the App's core features you enabled — live location, address, voice announcements, and on-device trip recording (routes, speed and distance). It is **never** used for advertising, profiling, or shared with third parties beyond the reverse-geocoding and weather services listed below, which receive only coordinates. Trip routes recorded in the background stay in the same on-device trip history described above (your 7 most recent travel days, plus any trips you have chosen to keep) and are never transmitted.
 - Background location updates occur only while one of these features is enabled, and stop when it stops.
+
+## Your Own Copies — Backup, Restore and Sharing
+**Backup and restore are new in version 1.16.0; sharing and saving a single trip are new in version 1.17.0. Please read, because this is the one part of the App where your data can leave the protection of your phone, and only you can decide that.**
+
+Until this version, trip history could not be got out of the App at all: changing phone, resetting it, or simply reinstalling destroyed every recorded journey, with no way to bring it back. The App now lets you make your own copies. **The App still never uploads anything, and we still have no servers and receive nothing** — but a copy you create is yours to look after, and what happens to it afterwards is outside the App's control.
+
+- **Back up (Settings → Backup).** Writes your trips, their routes and your step history to a single file, **at a location you choose** through Android's own file picker — your Downloads, an SD card, or a cloud drive such as Google Drive. The App has no storage permission and never sees where you put it. If you choose a cloud folder, that file is then held by that cloud provider under **their** privacy policy, not this one.
+- **Restore (Settings → Backup).** Reads a file you select and adds its trips to this phone. Journeys already present are left untouched, so nothing is overwritten.
+- **Share a trip (⋮ menu on any trip).** Hands one journey to whichever app you pick from Android's share sheet — as a picture of the route, or as a **GPX**, **KML** or **JSON** file containing that journey's coordinates, place names and times. Whoever receives it can see everywhere that journey went.
+- **Save a trip (⋮ menu on any trip).** The same journey data written to a location you choose, as above.
+- **Nothing leaves your phone until you choose a destination.** No backup, file or picture is created or sent in the background, on a schedule, or without you asking for it.
+- **A copy you have made is not covered by the App's own deletion.** Uninstalling the App, or clearing its data, removes everything inside the App — but it cannot reach a file you saved elsewhere or a trip you have already sent to somebody. Those remain until **you** delete them, wherever you put them. **Treat a backup file as you would a diary of where you have been.**
 
 ## Voice Announcements
 - The App can read your current place name aloud using your device's built-in **on-device text-to-speech** engine.
@@ -71,7 +84,7 @@ To understand how many people use the App, the App counts exactly two usage even
 | Google Play In-App Review | User ratings | None (system-level) | https://policies.google.com/privacy |
 | Aptabase (EU-hosted) | Anonymous usage statistics | Anonymous event counts + app version, Android version, device model, country/locale — **no identifiers, no location** | https://aptabase.com/legal/privacy |
 
-When you tap **Share**, the App builds a Google Maps link with your coordinates and hands it to whichever app you choose to share with. Nothing is shared until you select a destination.
+When you tap **Share** on the Location tab, the App builds a Google Maps link with your coordinates and hands it to whichever app you choose to share with. Sharing or saving a **trip** works the same way, but carries that journey's whole route rather than a single point — see "Your Own Copies" above. In both cases nothing is shared until you select a destination, and the App sends nothing to us or to any service of ours in the process.
 
 ## Advertising
 The current version of the App does **not** display advertisements. Future versions may include ads served by Google AdMob. If ads are introduced, this privacy policy will be updated accordingly, and AdMob's data practices will apply (https://policies.google.com/technologies/ads).
@@ -90,9 +103,11 @@ The current version of the App does **not** display advertisements. Future versi
 | RECEIVE_BOOT_COMPLETED | Re-enable that automatic trip start after the phone restarts, if trip recording is on |
 
 ## Data Storage
-- Location data written to storage is limited to two things, both in the App's private storage, both never transmitted, and both removed on uninstall:
-  - the **on-device trip history** described above — auto-deleted past your 7 most recent travel days unless you have chosen to keep a particular trip; and
-  - the **place cache** — coordinates and address text for places already looked up, so the same street is not looked up twice. Capped at 15,000 entries and each entry auto-deleted after 14 days.
+- Location data written to storage by the App is limited to three things, all in the App's private storage, all never transmitted, and all removed on uninstall:
+  - the **on-device trip history** described above — auto-deleted past your 7 most recent travel days unless you have chosen to keep a particular trip;
+  - the **place cache** — coordinates and address text for places already looked up, so the same street is not looked up twice. Capped at 15,000 entries and each entry auto-deleted after 14 days; and
+  - the **nearby-places cache** (new in version 1.17.0) — the results of Map searches you have run, kept so that returning to somewhere you have already looked does not have to ask the internet again. It holds the places found and the point you searched from, for up to **7 days** for attractions and **24 hours** once fuel, food or hospitals are included, capped at 32 searches. It is never transmitted.
+- **Files you create yourself are the exception, and are not in the App's private storage.** A backup file, or a trip you have saved or shared, sits wherever you chose to put it — see "Your Own Copies" above. The App cannot read, manage or delete it afterwards, and uninstalling does not remove it.
 - The App also stores non-personal app preferences on-device: a days-of-use counter (for the review prompt), the voice-announcement on/off setting, the in-app voice volume level, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), your daily step count, the anonymous-usage-statistics on/off setting, and a counter of postponed app-update reminders.
 - If you choose to enter your body weight (used only to estimate calories from your steps), it is stored on-device only and never leaves your phone.
 - No personal information is collected by us.
@@ -105,6 +120,8 @@ We operate no servers and retain **no user data of any kind** on our side. All d
 | Trip history (routes, place names, times) | App's private on-device storage | Your **7 most recent travel days** — a day's trips are deleted once 7 newer travel days exist |
 | Trips you chose to keep (bookmarked, max 30) | App's private on-device storage | **Until you delete them** — exempt from the automatic 7-day pruning, and never transmitted |
 | Place cache (coordinates + address text for places already looked up) | App's private on-device storage | **14 days per entry**, max 15,000 entries — never transmitted |
+| Nearby-places cache (Map search results + the point searched from) | App's private on-device storage | **7 days** for attractions, **24 hours** if fuel/food/hospitals are included; max 32 searches — never transmitted |
+| Backups, and trips you saved or shared | **Wherever you chose to put them** — not the App's storage | **Until you delete them.** The App cannot reach them, and uninstalling does not remove them |
 | Current location, address, weather, speed, altitude, compass | Device memory only | Discarded when tracking stops or the App closes |
 | App preferences (units, voice settings, optional body weight, step count, usage counters) | App's private on-device storage | Until you delete them or uninstall the App |
 | Anonymous usage statistics (event counts — no identifiers, no location) | Aptabase (EU) | Up to 5 years, in anonymous aggregate form only |
@@ -114,19 +131,20 @@ The third-party services listed above (geocoding, weather, map tiles, searches y
 ## Data Deletion
 Because we never collect or store your data on any server, **there is no data for us to delete** — everything is on your device and under your control. You can delete it at any time:
 
-- **Delete everything instantly:** uninstall the App, or go to **Android Settings → Apps → Find My Location → Storage → Clear data**. This permanently removes the trip history, the place cache, all preferences, and any stored weight — nothing survives anywhere else.
+- **Delete everything the App holds:** uninstall the App, or go to **Android Settings → Apps → Find My Location → Storage → Clear data**. This permanently removes the trip history, the place cache, the nearby-places cache, all preferences, and any stored weight.
+- **⚠️ Copies you made yourself are not included, and you must delete them yourself.** If you have created a backup file, saved a trip, or shared one, that copy is wherever you put it — your Downloads, an SD card, a cloud drive, or another person's phone. The App has no way to reach it, and uninstalling will not remove it. Delete those files where they live, and remember that anything already sent to somebody else cannot be taken back.
 - **Trip history** also prunes itself automatically: only your 7 most recent travel days are kept. Trips you have bookmarked to keep are the one exception — they stay until you delete them, and you can un-bookmark one at any time to hand it back to the automatic pruning. Before a day of trips is pruned, the Trips tab warns you which day is about to go, so nothing you wanted disappears without notice.
 - **Anonymous usage statistics** contain no identifiers by design, so they cannot be traced back to you or your device — there is nothing personal in them to delete. You can stop them being counted at any time in **Settings → Privacy**.
 
 If you have any questions or requests regarding your data, contact us at **playmine.support@gmail.com** and we will respond promptly.
 
 ## Data Sharing
-We do not sell, trade, or share your data with any third party beyond the services described above, each of which receives only the coordinates needed to perform its function.
+We do not sell, trade, or share your data with any third party beyond the services described above, each of which receives only the coordinates needed to perform its function. **The App itself never shares a trip with anyone.** The one way a journey reaches another person or service is if **you** send it — through the backup, save or share actions described in "Your Own Copies" — and then only to the destination you pick, at the moment you pick it.
 
 ## Data Security & Handling
 We handle the personal and sensitive data the App works with (your location) as follows:
 
-- Location is processed **on your device**. The only data written to disk — the trip history (your 7 most recent travel days, plus any trips you chose to keep), the place cache, and your preferences — is stored in the App's **private, sandboxed storage**, which Android prevents other apps from reading.
+- Location is processed **on your device**. Everything the App itself writes to disk — the trip history (your 7 most recent travel days, plus any trips you chose to keep), the place cache, the nearby-places cache, and your preferences — is stored in the App's **private, sandboxed storage**, which Android prevents other apps from reading. A backup or shared trip that **you** create is deliberately outside that sandbox, because the whole point of it is to survive the App being removed; from that moment its safety is in your hands.
 - All network communications (weather, map tiles, and searches you run) use **HTTPS/TLS encryption** and carry only coordinates — never your name, contacts, identifiers, or anything else, because the App never has such information.
 - **This version sends less than any before it.** Working out where you are — the place name shown on the Location tab, and the ground elevation behind "flight height" — used to require requests to outside services on a timer as you travelled. Both are now answered from data shipped inside the App, so travelling with the App open sends **nothing** for either.
 - No personal data is ever transmitted to servers operated by us; we have no servers and no user database.
