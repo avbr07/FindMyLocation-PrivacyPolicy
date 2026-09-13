@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** September 12, 2026  
+**Last updated:** September 13, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -156,6 +156,13 @@ We handle the personal and sensitive data the App works with (your location) as 
 - All network communications (weather, map tiles, and searches you run) use **HTTPS/TLS encryption** and carry only coordinates — never your name, contacts, identifiers, or anything else, because the App never has such information.
 - **This version sends less than any before it.** Working out where you are — the place name shown on the Location tab, and the ground elevation behind "flight height" — used to require requests to outside services on a timer as you travelled. Both are now answered from data shipped inside the App, so travelling with the App open sends **nothing** for either.
 - No personal data is ever transmitted to servers operated by us; we have no servers and no user database.
+
+## Respecting Other People's Privacy
+The App records the movements of the phone it is installed on, and keeps that record on that phone. It has no way to show one phone's location or trips to another phone, and nothing it records reaches us.
+
+Please use the App on your own phone — or, if you set it up on a phone that somebody else uses, make sure that person knows it is there and is happy for it to run. You are shown this reminder once when the App first opens, and it stays available in Settings and in the in-app Help guide.
+
+Laws about recording a person's movements differ from one country, and one state, to another. Complying with the law where you are is your responsibility as the person who installs and runs the App.
 
 ## Children's Privacy
 The App does not knowingly collect data from children under 13. The App does not require account creation or personal information.
