@@ -1,6 +1,6 @@
 # Privacy Policy for Find My Location
 
-**Last updated:** September 13, 2026  
+**Last updated:** September 17, 2026  
 **Developer:** PlayMine  
 **Package:** net.playmine.findmylocation
 
@@ -116,7 +116,7 @@ The current version of the App does **not** display advertisements. Future versi
   - the **place cache** — coordinates and address text for places already looked up, so the same street is not looked up twice. Capped at 15,000 entries and each entry auto-deleted after 14 days; and
   - the **nearby-places cache** (new in version 1.17.0) — the results of Map searches you have run, kept so that returning to somewhere you have already looked does not have to ask the internet again. It holds the places found and the point you searched from, for up to **7 days** for attractions and **24 hours** once fuel, food or hospitals are included, capped at 32 searches. It is never transmitted.
 - **Files you create yourself are the exception, and are not in the App's private storage.** A backup file, or a trip you have saved or shared, sits wherever you chose to put it — see "Your Own Copies" above. The App cannot read, manage or delete it afterwards, and uninstalling does not remove it.
-- The App also stores non-personal app preferences on-device: counters used to decide when to offer the “rate this app” prompt (how many times you have used the App, how many times the prompt has been offered, and how long the App has been on screen — all held on your device and never sent anywhere), the “switch background updates off when idle” on/off setting, counters recording whether background updates stopped themselves and how many movement reminders have been shown for that stop, the voice-announcement on/off setting, the in-app voice volume level, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), your daily step count, the anonymous-usage-statistics on/off setting, and a counter of postponed app-update reminders.
+- The App also stores non-personal app preferences on-device: counters used to decide when to offer the “rate this app” prompt (how many times you have used the App, how many times the prompt has been offered, and how long the App has been on screen — all held on your device and never sent anywhere), the “switch background updates off when idle” on/off setting, counters recording whether background updates stopped themselves and how many movement reminders have been shown for that stop, the voice-announcement on/off setting, the in-app voice volume level, the keep-screen-awake setting, the preferred speed unit (mph/km/h), the preferred temperature unit (°F/°C), your daily step count, the anonymous-usage-statistics on/off setting, the on/off setting for keeping the Map's nearby-places list open, a count of how many times that list has shown itself briefly, and a counter of postponed app-update reminders.
 - If you choose to enter your body weight (used only to estimate calories from your steps), it is stored on-device only and never leaves your phone.
 - No personal information is collected by us.
 
