@@ -62,7 +62,7 @@ Until this version, trip history could not be got out of the App at all: changin
 - **Share a trip (⋮ menu on any trip).** Hands one journey to whichever app you pick from Android's share sheet — as a picture of the route, or as a **GPX**, **KML** or **JSON** file containing that journey's coordinates, place names and times. Whoever receives it can see everywhere that journey went.
 - **Save a trip (⋮ menu on any trip).** The same journey data written to a location you choose, as above.
 - **Nothing leaves your phone until you choose a destination.** No backup, file or picture is created or sent in the background, on a schedule, or without you asking for it.
-- **A copy you have made is not covered by the App's own deletion.** Uninstalling the App, or clearing its data, removes everything inside the App — but it cannot reach a file you saved elsewhere or a trip you have already sent to somebody. Those remain until **you** delete them, wherever you put them. **Treat a backup file as you would a diary of where you have been.**
+- **A copy you have made is not covered by the App's own deletion.** Uninstalling the App, or clearing its data, removes everything the App keeps — but it cannot reach a file you saved elsewhere or a trip you have already sent to somebody. Those remain until **you** delete them, wherever you put them. **Treat a backup file as you would a diary of where you have been.**
 
 ## Voice Announcements
 - The App can read your current place name aloud using your device's own **on-device text-to-speech** engine.
